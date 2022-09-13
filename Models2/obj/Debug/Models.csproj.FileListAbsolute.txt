@@ -1,0 +1,6 @@
+C:\Users\logatti\Desktop\Eleicao2022\Models2\bin\Debug\Models2.dll
+C:\Users\logatti\Desktop\Eleicao2022\Models2\bin\Debug\Models2.pdb
+C:\Users\logatti\Desktop\Eleicao2022\Models2\obj\Debug\Models.csproj.AssemblyReference.cache
+C:\Users\logatti\Desktop\Eleicao2022\Models2\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\logatti\Desktop\Eleicao2022\Models2\obj\Debug\Models2.dll
+C:\Users\logatti\Desktop\Eleicao2022\Models2\obj\Debug\Models2.pdb
