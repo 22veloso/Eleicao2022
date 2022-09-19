@@ -15,7 +15,7 @@ namespace Eleicao2022
 {
     public partial class Cadastro_de_Candidatos : System.Web.UI.Page
     {
-        DataTable dt = new DataTable();// criando um dataTable para receber os dados da nossa consulta
+        DataTable dt = new DataTable();// criando um dataTable para receber os dados da  consulta
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -47,11 +47,12 @@ namespace Eleicao2022
                 return;
             }
             
-            string sql = "SELECT * FROM Usuario Where Admin ='" + us.Admin + "' AND Senha='" + us.Senha + "'";//
-            dt = UsuarioServ.Consuta(sql);
+            string sql = "SELECT * FROM Usuario Where Admin ='" + us.Admin + "' AND Senha='" + us.Senha + "'";
+            
+            dt = UsuarioServ.Consulta(sql);
             if (dt.Rows.Count == 1) 
             {
-                Response.Redirect("~/Votacao.aspx");
+                Response.Redirect("~/Cadastro.aspx");
 
             }
         

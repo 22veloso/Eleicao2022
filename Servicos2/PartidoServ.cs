@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();
@@ -37,7 +38,35 @@ namespace Servicos
             return Id_Partido;
 
         }
+        public static DataTable Consulta(string sql)// retornando minha consulta
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+
+                using (var cmd = conexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = sql;// passando o parametro sql
+                    da = new SQLiteDataAdapter(cmd.CommandText, conexaoBanco());
+                    da.Fill(dt);
+                    conexaoBanco().Close(); // fechando a conexao
+                    return dt;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                conexaoBanco().Close();
+                throw ex;
+            }
+
+
+        }
     }
-}
+
+    }
+
     
 

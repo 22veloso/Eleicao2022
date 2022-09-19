@@ -39,3 +39,29 @@ C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\bin\System.Data.SQLite.xml
 C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.csproj.CopyComplete
 C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.dll
 C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.pdb
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\x86\sqlite3.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\x64\sqlite3.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Eleicao2022.dll.config
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Eleicao2022.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Eleicao2022.pdb
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Correios.Net.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\EntityFramework.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\EntityFramework.SqlServer.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Models2.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Servicos2.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\System.Data.SQLite.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\System.Data.SQLite.EF6.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\System.Data.SQLite.Linq.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Models2.pdb
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Models2.dll.config
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Servicos2.pdb
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Servicos2.dll.config
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\Correios.Net.pdb
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\EntityFramework.xml
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\EntityFramework.SqlServer.xml
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\bin\System.Data.SQLite.xml
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.csproj.AssemblyReference.cache
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.csproj.CopyComplete
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.dll
+C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.pdb

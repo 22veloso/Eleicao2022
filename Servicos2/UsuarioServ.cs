@@ -13,14 +13,14 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();
                 return conexao;
             }
         }
-        public static DataTable Consuta(string sql)// retornando minha consulta
+        public static DataTable Consulta(string sql)// retornando minha consulta
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();

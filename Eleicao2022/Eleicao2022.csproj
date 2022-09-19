@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Correios.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios.CEP.Net.1.1.6\lib\Correios.Net.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -79,11 +82,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cadastro_Candidato.aspx" />
+    <Content Include="Cadastro_Urnas.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Cadastro.aspx" />
+    <Content Include="Votacao.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro_Candidato.aspx.cs">
+      <DependentUpon>Cadastro_Candidato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Candidato.aspx.designer.cs">
+      <DependentUpon>Cadastro_Candidato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_Urnas.aspx.cs">
+      <DependentUpon>Cadastro_Urnas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_Urnas.aspx.designer.cs">
+      <DependentUpon>Cadastro_Urnas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +118,13 @@
     </Compile>
     <Compile Include="Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Votacao.aspx.cs">
+      <DependentUpon>Votacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Votacao.aspx.designer.cs">
+      <DependentUpon>Votacao.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

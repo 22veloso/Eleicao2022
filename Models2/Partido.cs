@@ -12,6 +12,6 @@ namespace Models
         public int Id { get; set; }
         public string Sigla { get; set; }
         public string Descricao { get; set; }
-        public int NumPartido { get; set; }
+        public string NumPartido { get; set; }
     }
 }
