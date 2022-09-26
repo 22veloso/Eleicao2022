@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public  class Voto
+    public  class Votos
     {
         public int Id { get; set; }
         public Urnas Urnas { get; set; }

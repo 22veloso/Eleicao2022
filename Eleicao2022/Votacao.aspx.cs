@@ -72,24 +72,47 @@ namespace Eleicao2022
 
         protected void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Urnas ur = new Urnas();
+           
+            
 
-            if  (TbResultado.Text == "" )
+            string Resultado = (TbResultado.Text);
+            Candidatos candidato = new CandidatoServ().NovoVoto(Resultado);
+            if (Resultado == "")
             {
 
                 MessageBox.Show("Campo Vazio");
-               TbResultado.Focus();
+                TbResultado.Focus();
                 return;
             }
-            string sql = "SELECT  NumPartido FROM Partido ='" + TbResultado.Text + "'";
-            dt = PartidoServ.Consulta(sql);
+            string sql = "select Candidatos.Id, Nome, sigla from Candidatos inner join Partido on Id_Partido = Partido.Id where NumPartido ='"+ TbResultado.Text +"'";
+          
+           
+
+            dt = CandidatoServ.Consulta(sql);
             if (dt.Rows.Count == 1)
             {
-              
-                ur.NumeroVotos = ur.NumeroVotos + 1;
-          
-            }
 
+                new VotosServ().IncluirVoto(IdUrna, candidato.Id);
+                lblDados.Text = String.Format("Candidato {0}",candidato.Nome);
+
+              
+                
+              
+            
+
+
+
+
+
+
+            }
+        
+
+            else
+            {
+                MessageBox.Show("nao achou");
+            }
+           
 
         }
     }

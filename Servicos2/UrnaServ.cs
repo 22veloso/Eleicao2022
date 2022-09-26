@@ -1,10 +1,12 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Servicos2
 {
@@ -23,12 +25,11 @@ namespace Servicos2
         }
 
         static List<Urnas> lst = new List<Urnas>();
-        public static void NovaUrna(Urnas u)
+        public  void NovaUrna(Urnas u)
         {
             var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "insert into Urnas ( Id, Id_Escola,NumerosVotos) values (@Id, @Id_Escola,@NumerosVotos)";
+            cmd.CommandText = "insert into Urnas ( Id, Id_Escola) values (@Id, @Id_Escola)";
             cmd.Parameters.AddWithValue("@Id", u.Id);
-            cmd.Parameters.AddWithValue("@NumerosVotos", u.NumeroVotos);
             cmd.Parameters.AddWithValue("@Id_Escola", u.Escola.Id);
             lst.Add(u);
 
@@ -36,18 +37,60 @@ namespace Servicos2
             conexaoBanco().Close();
 
         }
-    }
-}
+        public static DataTable dml (string q, string msgOK= null,string msgERRO= null)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = conexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = q;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                return dt;
+                if (msgOK != null)
+                {
+                    MessageBox.Show(msgOK);
+                }
+            }
+            catch (Exception ex)
+            {
+                if(msgERRO != null)
+                {
+                    MessageBox.Show(msgERRO + "\n" + ex.Message);
+                }
+                throw ex;
+            }
+            }
+        public static DataTable Consulta(string sql)// retornando minha consulta
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
 
-//INSERT INTO Urnas (
-                  //    Id,
-                   //   NumerosVotos,
-                 //     Id_Escola,
-                 //     Id_candidato
-                 // )
-               //   VALUES(
-                //      '1',
-                //      2,
-                 //     4,
-                //      8
-               //   );
+                using (var cmd = conexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = sql;// passando o parametro sql
+                    da = new SQLiteDataAdapter(cmd.CommandText, conexaoBanco());
+                    da.Fill(dt);
+                    conexaoBanco().Close(); // fechando a conexao
+                    return dt;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                conexaoBanco().Close();
+                throw ex;
+            }
+
+
+        }
+
+    }
+    }
+

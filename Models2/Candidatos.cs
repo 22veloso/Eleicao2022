@@ -11,6 +11,7 @@ namespace Models
       public int Id { get; set; }
       public Tipo Tipo { get; set; }
         public Partido Partido { get; set; }
+        public int Voto { get; set; }
 
 
     }

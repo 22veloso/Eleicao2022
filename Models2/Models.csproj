@@ -73,7 +73,7 @@
     <Compile Include="Tipo.cs" />
     <Compile Include="Urnas.cs" />
     <Compile Include="Usuario.cs" />
-    <Compile Include="Voto.cs" />
+    <Compile Include="Votos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -30,10 +30,11 @@ namespace Servicos
         public static void NovoCandidato(Candidatos c)
         {
             var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "insert into Candidatos ( Nome, Telefone, Id_Partido) values (@Nome, @Telefone, @Id_Partido)";
+            cmd.CommandText = "insert into Candidatos ( Nome, Telefone, Id_Partido, Voto) values (@Nome, @Telefone, @Id_Partido, @Voto)";
             cmd.Parameters.AddWithValue("@Nome", c.Nome);
             cmd.Parameters.AddWithValue("@Telefone", c.Telefone);
             cmd.Parameters.AddWithValue("@Id_Partido", c.Partido.Id);
+            cmd.Parameters.AddWithValue("@Voto", c.Voto);
             lst.Add(c);
 
             cmd.ExecuteNonQuery();
@@ -67,5 +68,27 @@ namespace Servicos
 
 
         }
+        public Candidatos NovoVoto(string NumPartido)
+        {
+            var cmd = conexaoBanco().CreateCommand();
+            cmd.CommandText = "select Candidatos.Nome,Partido.Sigla from Candidatos inner join  Partido on Id_Partido = Partido.Id where NumPartido =@NumPartido;";
+            cmd.Parameters.AddWithValue("@NumPartido",NumPartido);
+            cmd.ExecuteNonQuery();
+
+            Candidatos candidatos = null;
+            using (SQLiteDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    candidatos = new Candidatos();
+                    candidatos.Nome = reader["Nome"].ToString();
+                }
+            }
+            conexaoBanco().Close();
+            return candidatos;
+        }
+
+        }
     }
-}
+
+

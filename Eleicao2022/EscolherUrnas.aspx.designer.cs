@@ -11,7 +11,7 @@ namespace Eleicao2022
 {
 
 
-    public partial class Cadastro_Urnas
+    public partial class EscolherUrnas
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace Eleicao2022
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Controle DDEscola.
+        /// Controle DDEscola0.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDEscola;
+        protected global::System.Web.UI.WebControls.DropDownList DDEscola0;
 
         /// <summary>
         /// Controle Label3.
@@ -51,21 +51,21 @@ namespace Eleicao2022
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Controle TbId.
+        /// Controle DDUrna.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbId;
+        protected global::System.Web.UI.WebControls.DropDownList DDUrna;
 
         /// <summary>
-        /// Controle BtnSalvarurna.
+        /// Controle BtnSelecionar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSalvarurna;
+        protected global::System.Web.UI.WebControls.Button BtnSelecionar;
     }
 }

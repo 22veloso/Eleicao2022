@@ -9,6 +9,7 @@ namespace Models
 {
    public class Escola
     {
+        public const string GETALL = "select * from Escola";
         public int Id { get; set; }
         public string Nome { get; set; }
         public Endereco Endereco { get; set; }

@@ -13,45 +13,34 @@ namespace Eleicao2022
 {
     public partial class Cadastro_Urnas : System.Web.UI.Page
     {
-        DataTable dt = new DataTable();
-        protected void BtnPesES_Click(object sender, EventArgs e)
+
+        protected void BtnSalvarurna_Click1(object sender, EventArgs e)
         {
-            Escola es = new Escola();
-            es.Nome = TbPesEs.Text;
-
-            if (es.Nome == "")
-            {
-
-                MessageBox.Show("Campo Vazio!");
-
-                TbPesEs.Focus();
-                return;
-
-            }
-            string sql = "SELECT I Nome FROM Escola ='" + es.Nome + "'";
-            dt = EscolaServ.Consulta(sql);
-            if (dt.Rows.Count == 1)
-            {
-                TbResEs.Text = TbPesEs.Text + "";
-            }
-        
-
-            else
-            {
-                MessageBox.Show("Escola não encontrado!");
-            }
-
-        }
-
-        protected void BtnSalvarUrna_Click(object sender, EventArgs e)
-        {
-            Urnas ur = new Urnas();
-            ur.Id = TbGerarUrna.Text;
-          
-
-            UrnaServ.NovaUrna(ur);
             
-        }
+                Urnas ur = new Urnas();
+            ur.Id = int.Parse(TbId.Text);
+            ur.Escola = new Escola() { Id = int.Parse(DDEscola.SelectedValue.ToString()) };
+  
+
+            new UrnaServ().NovaUrna(ur);
+            }
+
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                LoadEscola();
+            }
+
+            private void LoadEscola()
+            {
+                DDEscola.DataSource = EscolaServ.Consulta(Escola.GETALL);
+                DDEscola.DataValueField = "Id";
+                DDEscola.DataTextField = "Nome";
+                DDEscola.DataBind();
+            }
+
+       
     }
-}
+    }
+
+
 

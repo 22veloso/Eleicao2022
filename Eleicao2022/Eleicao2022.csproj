@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="Cadastro_Candidato.aspx" />
     <Content Include="Cadastro_Urnas.aspx" />
+    <Content Include="EscolherUrnas.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Cadastro.aspx" />
     <Content Include="Votacao.aspx" />
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="Cadastro_Urnas.aspx.designer.cs">
       <DependentUpon>Cadastro_Urnas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EscolherUrnas.aspx.cs">
+      <DependentUpon>EscolherUrnas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EscolherUrnas.aspx.designer.cs">
+      <DependentUpon>EscolherUrnas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

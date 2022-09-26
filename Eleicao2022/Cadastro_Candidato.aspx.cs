@@ -39,6 +39,7 @@ namespace Eleicao2022
                     Candidatos cand = new Candidatos();
                     cand.Nome = TbNomeCan.Text;
                     cand.Telefone = TbTelefoneCan.Text;
+                    cand.Voto = 0;
                     cand.Partido = new Partido() { Id = (int)Id_Partido };
                     CandidatoServ.NovoCandidato(cand);
 
