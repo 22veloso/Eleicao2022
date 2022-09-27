@@ -18,7 +18,7 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();
@@ -65,24 +65,26 @@ namespace Servicos
                 conexaoBanco().Close();
                 throw ex;
             }
+       
+   
 
+       }
+        public Candidatos BuscaCandidato(string NumPartido)
+       {
+         var cmd = conexaoBanco().CreateCommand();
+           cmd.CommandText = "select Candidatos.Id,Nome,Partido.Sigla from Candidatos inner join  Partido on Id_Partido = Partido.Id where NumPartido =@NumPartido;";
+           cmd.Parameters.AddWithValue("@NumPartido",NumPartido);
+           cmd.ExecuteNonQuery();
 
-        }
-        public Candidatos NovoVoto(string NumPartido)
-        {
-            var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "select Candidatos.Nome,Partido.Sigla from Candidatos inner join  Partido on Id_Partido = Partido.Id where NumPartido =@NumPartido;";
-            cmd.Parameters.AddWithValue("@NumPartido",NumPartido);
-            cmd.ExecuteNonQuery();
-
-            Candidatos candidatos = null;
-            using (SQLiteDataReader reader = cmd.ExecuteReader())
+            Candidatos candidatos =null;
+           using (SQLiteDataReader reader = cmd.ExecuteReader())
             {
-                if (reader.Read())
-                {
-                    candidatos = new Candidatos();
+               if (reader.Read())
+               {
+                   candidatos = new Candidatos();
+                    candidatos.Id = int.Parse(reader["Id"].ToString());
                     candidatos.Nome = reader["Nome"].ToString();
-                }
+               }
             }
             conexaoBanco().Close();
             return candidatos;

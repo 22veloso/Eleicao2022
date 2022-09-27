@@ -38,7 +38,7 @@ namespace Eleicao2022
             string IdEscola = DDEscola0.SelectedValue;
             string IdUrna= DDUrna.SelectedValue;
 
-            Response.Redirect("~/Votacao.aspx");
+            Response.Redirect("~/Votacao.aspx?IdEscola="+IdEscola+"&IdUrna="+IdUrna);
         }
     }
     }

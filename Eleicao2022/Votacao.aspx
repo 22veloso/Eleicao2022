@@ -28,6 +28,7 @@
         }
         .auto-style9 {
             margin-left: 26px;
+            height: 26px;
         }
         .auto-style10 {
             margin-left: 19px;
@@ -66,7 +67,7 @@
             <br />
             <asp:Button ID="BtnBranco" runat="server" BackColor="White" Text="Branco" Width="71px" />
             <asp:Button ID="BtnCorrigir" runat="server" BackColor="#CC3300" CssClass="auto-style12" Text="Corrigir" Width="71px" />
-            <asp:Button ID="BtnConfirmar" runat="server" BackColor="#33CC33" CssClass="auto-style9" OnClick="BtnConfirmar_Click" Text="Confirmar" Width="72px" style="height: 26px" />
+            <asp:Button ID="BtnConfirmar" runat="server" BackColor="#33CC33" CssClass="auto-style9" OnClick="BtnConfirmar_Click" Text="Confirmar" Width="72px" />
             <br />
 &nbsp;
             <br />

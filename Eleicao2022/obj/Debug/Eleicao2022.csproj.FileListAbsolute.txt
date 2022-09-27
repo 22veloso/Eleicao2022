@@ -65,3 +65,6 @@ C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Deb
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.csproj.CopyComplete
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.dll
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Eleicao2022.pdb
+C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\bin\Correios.Net.dll
+C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\bin\Models2.dll.config
+C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\bin\Correios.Net.pdb

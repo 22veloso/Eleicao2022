@@ -59,3 +59,6 @@ C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Servicos2\obj\Debug
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Servicos2\obj\Debug\Servicos.csproj.CopyComplete
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Servicos2\obj\Debug\Servicos2.dll
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Servicos2\obj\Debug\Servicos2.pdb
+C:\Users\logatti\Desktop\Eleicao2022\Servicos2\bin\Debug\Correios.Net.dll
+C:\Users\logatti\Desktop\Eleicao2022\Servicos2\bin\Debug\Models2.dll.config
+C:\Users\logatti\Desktop\Eleicao2022\Servicos2\bin\Debug\Correios.Net.pdb

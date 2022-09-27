@@ -72,11 +72,16 @@ namespace Eleicao2022
 
         protected void BtnConfirmar_Click(object sender, EventArgs e)
         {
-           
-            
+            string IdEscola = Request.QueryString["IdEscola"];
+            string IdUrna = Request.QueryString["IdUrna"];
+            Votos votos = new Votos()
+            {
+                 Data = DateTime.Now,
+                Urnas = new Urnas() { Id = int.Parse(IdUrna)}
+            };
 
             string Resultado = (TbResultado.Text);
-            Candidatos candidato = new CandidatoServ().NovoVoto(Resultado);
+            Candidatos candidato = new CandidatoServ().BuscaCandidato(Resultado);
             if (Resultado == "")
             {
 
@@ -85,35 +90,19 @@ namespace Eleicao2022
                 return;
             }
             string sql = "select Candidatos.Id, Nome, sigla from Candidatos inner join Partido on Id_Partido = Partido.Id where NumPartido ='"+ TbResultado.Text +"'";
-          
-           
-
             dt = CandidatoServ.Consulta(sql);
             if (dt.Rows.Count == 1)
             {
-
-                new VotosServ().IncluirVoto(IdUrna, candidato.Id);
+                votos.CandidatoVoto = new Candidatos() { Partido = new Partido() { NumPartido = Resultado } };
+                VotosServ.IncluirVoto(votos);
                 lblDados.Text = String.Format("Candidato {0}",candidato.Nome);
-
-              
-                
-              
-            
-
-
-
-
-
+                lblDados.Text = String.Format("Candidato {0}", candidato.Id);
 
             }
-        
-
             else
             {
                 MessageBox.Show("nao achou");
             }
-           
-
         }
     }
 }
