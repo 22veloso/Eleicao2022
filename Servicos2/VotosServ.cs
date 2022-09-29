@@ -14,7 +14,7 @@ namespace Servicos2
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();
@@ -23,17 +23,31 @@ namespace Servicos2
         }
 
 
-        public static void IncluirVoto(Votos votos)
+        public static void IncluirVoto(string IdUrna,Votos votos)
         {
             var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "insert into Votos ( Id_Candidato, Data ,Id_Urnas) values (@Id_Urnas, @Id_Candidato, @Data);";
-         ;
+            cmd.CommandText = "insert into Votos ( Id_Candidato, Data ,Id_Urnas) values ( @Id_Candidato, @Data,@Id_Urnas);";
+            ;
             cmd.Parameters.AddWithValue("@Data", DateTime.Now);
-            cmd.Parameters.AddWithValue("@Id_Candidato",votos.CandidatoVoto.Partido.NumPartido);
+            cmd.Parameters.AddWithValue("@Id_Candidato", votos.CandidatoVoto.Partido.NumPartido);
             cmd.Parameters.AddWithValue("@Id_Urnas", votos.Urnas.Id);
             cmd.ExecuteNonQuery();
             conexaoBanco().Close();
 
+           AtualizarUrnas(IdUrna);
+
+
+
+        }
+        public static void AtualizarUrnas(string IdUrna)
+        {
+            var cmd = conexaoBanco().CreateCommand();
+            cmd.CommandText = "update Urnas set NumerosVotos = NumerosVotos + 1 where Id = @Id_urnas; ";
+            cmd.Parameters.AddWithValue("@Id_urnas", IdUrna);
+
+
+            cmd.ExecuteNonQuery();
+            conexaoBanco().Close();
         }
     }
 }

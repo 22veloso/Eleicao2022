@@ -60,8 +60,8 @@
         &nbsp;&nbsp;&nbsp;<asp:Button ID="BtnCadCandidato" runat="server" BackColor="White" ForeColor="Black" Height="36px" Text="Cadastrar Candidato" Width="127px" BorderColor="White" OnClick="BtnCadCandidato_Click" />
         <br />
         <br />
-&nbsp;<asp:Button ID="BtnVotacao" runat="server" BackColor="Lime" ForeColor="Black" Height="34px" Text="Iniciar Votação" Width="92px" />
-        <asp:Button ID="BtnArquivo" runat="server" CssClass="auto-style6" Height="35px" OnClick="BtnLimpar_Click" Text="Arquivo" Width="89px" />
+&nbsp;<asp:Button ID="BtnVotacao" runat="server" BackColor="Lime" ForeColor="Black" Height="34px" Text="Iniciar Votação" Width="92px" OnClick="BtnVotacao_Click" />
+        <asp:Button ID="BtnArquivo" runat="server" CssClass="auto-style6" Height="35px" OnClick="BtnArquivo_Click" Text="Arquivo" Width="89px" />
         &nbsp;&nbsp;
         <asp:Button ID="BtnGerarUrnas" runat="server" BackColor="#CCCC00" Height="34px" Text="Gerar Urnas" Width="88px" OnClick="BtnGerarUrnas_Click" />
         <br />

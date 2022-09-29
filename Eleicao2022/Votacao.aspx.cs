@@ -4,6 +4,7 @@ using Servicos2;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -72,12 +73,12 @@ namespace Eleicao2022
 
         protected void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            string IdEscola = Request.QueryString["IdEscola"];
+
             string IdUrna = Request.QueryString["IdUrna"];
             Votos votos = new Votos()
             {
-                 Data = DateTime.Now,
-                Urnas = new Urnas() { Id = int.Parse(IdUrna)}
+                Data = DateTime.Now,
+                Urnas = new Urnas() { Id = int.Parse(IdUrna) }
             };
 
             string Resultado = (TbResultado.Text);
@@ -89,20 +90,66 @@ namespace Eleicao2022
                 TbResultado.Focus();
                 return;
             }
-            string sql = "select Candidatos.Id, Nome, sigla from Candidatos inner join Partido on Id_Partido = Partido.Id where NumPartido ='"+ TbResultado.Text +"'";
+            string sql = "select Candidatos.Id, Nome, sigla from Candidatos inner join Partido on Id_Partido = Partido.Id where NumPartido ='" + TbResultado.Text + "'";
             dt = CandidatoServ.Consulta(sql);
             if (dt.Rows.Count == 1)
             {
                 votos.CandidatoVoto = new Candidatos() { Partido = new Partido() { NumPartido = Resultado } };
-                VotosServ.IncluirVoto(votos);
-                lblDados.Text = String.Format("Candidato {0}",candidato.Nome);
-                lblDados.Text = String.Format("Candidato {0}", candidato.Id);
+                VotosServ.IncluirVoto(IdUrna,votos);
+                lblDados.Text = String.Format("Candidato {0}", candidato.Nome);
+                WriteTxt(string.Format("Voto para {0} - Urna {1}", candidato.Nome, IdUrna));
 
+                MessageBox.Show("Voto Computado com Sucesso!");
             }
+
+   
+            
+
+
+
             else
             {
-                MessageBox.Show("nao achou");
+                Response.Write("<script>alert('Candidato inválido!');</script>");
+            }
+
+        }
+        protected void BtnNulo_Click(object sender, EventArgs e)
+        {
+            string IdUrna = Request.QueryString["IdUrna"];
+            lblDados.Text = "Voto nulo";
+            WriteTxt(string.Format("Voto nulo - Urna {0}", IdUrna));
+        }
+        protected void BtnBranco_Click(object sender, EventArgs e)
+        {
+            string IdUrna = Request.QueryString["IdUrna"];
+            lblDados.Text = "Voto em branco";
+            WriteTxt(string.Format("Voto em Branco - Urna {0}", IdUrna));
+        }
+        private void WriteTxt(string result)
+        {
+            string path = @"C:\Users\Lucas Veloso\Downloads\Eleicao2022\Eleicao22.txt";
+            string readText = "";
+
+            if (File.Exists(path))
+            {
+                readText = File.ReadAllText(path);
+            }
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                if (readText != "")
+                    writer.Write(readText);
+
+                writer.WriteLine(DateTime.Now + ": " + result);
             }
         }
+
+        protected void BtnCorrigir_Click(object sender, EventArgs e)
+        {
+            TbResultado.Text = "";
+        }
+
+    
     }
 }
+

@@ -17,7 +17,7 @@ namespace Servicos2
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();

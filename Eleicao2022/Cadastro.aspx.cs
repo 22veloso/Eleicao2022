@@ -14,11 +14,13 @@ namespace Eleicao2022
        
         protected void BtnLimpar_Click(object sender, EventArgs e)
         {
-            //TbNomeCan.Text = "";
-            //TbTelefoneCan.Text = "";
-           // TbDescPartido.Text = "";
-           // TbSigla.Text = "";
-           // TbNumPartido.Text = "";
+           TbCep.Text = "";
+           TbCidade.Text = "";
+            TbBairro.Text = "";
+           TbLogradouro.Text = "";
+          TbNomeEscola.Text = "";
+            TbNumEs.Text = "";
+            TbUf.Text = "";
         }
 
         protected void BtnPesquisar_Click(object sender, EventArgs e)
@@ -74,12 +76,22 @@ namespace Eleicao2022
       
             es.Endereco = new Endereco() { Id = (int) Id_Endereco};
            EscolaServ.NovaEscola(es);
-
+            MessageBox.Show("Escola inserida!!");
         }
 
         protected void BtnGerarUrnas_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Cadastro_Urnas.aspx");
+        }
+
+        protected void BtnVotacao_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/EscolherUrnas.aspx");
+        }
+
+        protected void BtnArquivo_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

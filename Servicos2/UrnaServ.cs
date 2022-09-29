@@ -16,7 +16,7 @@ namespace Servicos2
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\Eleicao2022\Eleicao2022\obj\Debug\Banco\EleicaoDB.db");
 
             {
                 conexao.Open();
@@ -25,7 +25,7 @@ namespace Servicos2
         }
 
         static List<Urnas> lst = new List<Urnas>();
-        public  void NovaUrna(Urnas u)
+        public void NovaUrna(Urnas u)
         {
             var cmd = conexaoBanco().CreateCommand();
             cmd.CommandText = "insert into Urnas ( Id, Id_Escola) values (@Id, @Id_Escola)";
@@ -37,7 +37,7 @@ namespace Servicos2
             conexaoBanco().Close();
 
         }
-        public static DataTable dml (string q, string msgOK= null,string msgERRO= null)
+        public static DataTable dml(string q, string msgOK = null, string msgERRO = null)
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
@@ -57,13 +57,13 @@ namespace Servicos2
             }
             catch (Exception ex)
             {
-                if(msgERRO != null)
+                if (msgERRO != null)
                 {
                     MessageBox.Show(msgERRO + "\n" + ex.Message);
                 }
                 throw ex;
             }
-            }
+        }
         public static DataTable Consulta(string sql)// retornando minha consulta
         {
             SQLiteDataAdapter da = null;
@@ -91,6 +91,6 @@ namespace Servicos2
 
         }
 
+      
     }
-    }
-
+}

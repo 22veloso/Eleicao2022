@@ -150,6 +150,15 @@ namespace Eleicao2022
         protected global::System.Web.UI.WebControls.Button BtnCorrigir;
 
         /// <summary>
+        /// Controle BtnNulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnNulo;
+
+        /// <summary>
         /// Controle BtnConfirmar.
         /// </summary>
         /// <remarks>
